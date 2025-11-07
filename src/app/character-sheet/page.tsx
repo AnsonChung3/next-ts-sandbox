@@ -1,8 +1,8 @@
 import * as EN from '../../components/characterEnums';
-import CreateChar from '../../components/createCharacter';
+import PlayerChar from '../../components/playerCharacter';
 
-export default function CharacterCreation() {
-    const dummyChar = new CreateChar('anson', 'human', 'fire');
+export default function CharacterSheet() {
+    const dummyChar = new PlayerChar('anson', 'human', 'fire');
     return (
         <>
             <div>

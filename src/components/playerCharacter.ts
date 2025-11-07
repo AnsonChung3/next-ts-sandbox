@@ -1,6 +1,6 @@
 import * as EN from './characterEnums';
 
-export default class CreateChar {
+export default class PlayerChar {
     name: string;
     race: string;
     element: string;
