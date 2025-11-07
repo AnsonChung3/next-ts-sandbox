@@ -1,3 +1,5 @@
+// ref class-and-instances/page.tsx for notes
+
 'use client';
 import { useState } from 'react';
 

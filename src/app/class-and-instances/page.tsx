@@ -1,3 +1,23 @@
+// i this implementation, the main focus is how to work with class objects/instance
+// tldr: render class instance in React component works,
+// but it doesn't work the way I want it to, and
+// it doesn't solve my problem
+// need to look into other options: context api, useRef, useState, maybe a mix of them
+
+// React docs say "you should treat any JavaScript object that you put into state as read-only"
+// it doesn't like to make things really reactive
+// and because how it is rendered, with debug console in
+//    1. this file
+//    2. dummy component
+//    3. layout.tsx
+
+// it is proven
+//    1. when const anson changes in this file, it constructs a new class instance
+//    2. and then re-render this component and display with the new instance
+//    3. that triggers dummy component to re-render because it's nested
+//    bonus point: when browswer navigate to a new page, it recreates on app level
+//                 >>> [localhost:3000] to [3000/this-page]
+
 'use client';
 import { useState } from 'react';
 import DummyComponent from '../../components/DummyComponent';
