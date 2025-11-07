@@ -1,11 +1,13 @@
 export default function ExtendClass() {
-    const d = new Dog('Ghosty');
+    const d = new Dog('Ghosty', ['white', 'grey', 'black']);
     const e = new Derived();
     return (
         <>
             <h1>Class extension</h1>
             <section>
-                <h2>DOG</h2>
+                <h2>
+                    {d.name} is a dog of {d.colour.length} colour(s): {d.colour}
+                </h2>
                 <h3>dog move</h3>
                 <p>{d.move()}</p>
                 <h3>dog woof</h3>
@@ -36,6 +38,13 @@ class Animal {
 }
 
 class Dog extends Animal {
+    colour: Array<string>;
+
+    constructor(name: string, colour: Array<string>) {
+        super(name);
+        this.colour = colour;
+    }
+
     woof(times: number) {
         for (let i = 0; i < times; i++) {
             return 'woof!';
