@@ -1,4 +1,6 @@
 export default function CustomClassExtender() {
+    const stardewValley = new Game('Stardew Valley');
+
     return (
         <>
             <h1>Custom Class Extender</h1>
@@ -26,8 +28,6 @@ class Game {
         this.name = name;
     }
 }
-
-const stardewValley = new Game('Stardew Valley');
 
 const dummyArrowConst = (arg: string[]) => {
     return arg.reduce((acc, curr) => acc + curr);
