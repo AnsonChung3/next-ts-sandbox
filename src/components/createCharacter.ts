@@ -18,28 +18,27 @@ export default class CreateChar {
     }
 
     takeDamage() {
-        let multiplier = 1;
         const selfEl: number =
             EN.element[this.element as keyof typeof EN.element];
         const attackEl: number = EN.element['water'];
         const damage = 5;
 
-        if (
-            selfEl === attackEl - 1 ||
-            (selfEl === EN.elCount - 1 && attackEl === 1)
-        ) {
-            // player is weak against enemy
-            multiplier = 2;
-        }
+        const elementMulti = elementMultiplier(selfEl, attackEl);
 
-        if (
-            selfEl === attackEl + 1 ||
-            (selfEl === 1 && attackEl === EN.elCount - 1)
-        ) {
-            multiplier = 0.5;
-        }
-
-        const dmgReceived = Math.ceil(damage * multiplier);
+        const dmgReceived = Math.ceil(damage * elementMulti);
         return `Given self element is ${this.element}; Attack element is water; incoming damgage = 5. Damage received is ${dmgReceived}`;
     }
 }
+
+const elementMultiplier = (self: number, enemy: number) => {
+    if (self === enemy - 1 || (self === EN.elCount - 1 && enemy === 1)) {
+        // player is weak against enemy
+        return 2;
+    }
+
+    if (self === enemy + 1 || (self === 1 && enemy === EN.elCount - 1)) {
+        return 0.5;
+    }
+
+    return 1;
+};
