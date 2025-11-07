@@ -1,5 +1,5 @@
 export default function ExtendClass() {
-    const d = new Dog();
+    const d = new Dog('Ghosty');
     const e = new Derived();
     return (
         <>
@@ -10,6 +10,8 @@ export default function ExtendClass() {
                 <p>{d.move()}</p>
                 <h3>dog woof</h3>
                 <p>{d.woof(3)}</p>
+                <h3>play</h3>
+                <p>{d.playTug()}</p>
             </section>
             <section>
                 <h2>BASE</h2>
@@ -22,6 +24,12 @@ export default function ExtendClass() {
     );
 }
 class Animal {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
     move() {
         return 'Moving along!';
     }
@@ -32,6 +40,10 @@ class Dog extends Animal {
         for (let i = 0; i < times; i++) {
             return 'woof!';
         }
+    }
+
+    playTug() {
+        return `${this.name} wants to play Tug!`;
     }
 }
 
