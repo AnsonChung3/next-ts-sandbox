@@ -2,7 +2,7 @@ import * as EN from '../../components/characterEnums';
 import CreateChar from '../../components/createCharacter';
 
 export default function CharacterCreation() {
-    const dummyChar = new CreateChar('anson', 'human');
+    const dummyChar = new CreateChar('anson', 'human', 'fire');
     return (
         <>
             <div>
@@ -17,6 +17,7 @@ export default function CharacterCreation() {
                     Dummy character is {dummyChar.name}.{' '}
                     {dummyChar.defaultAttack()}
                 </p>
+                <p>{dummyChar.takeDamage()}</p>
             </div>
         </>
     );

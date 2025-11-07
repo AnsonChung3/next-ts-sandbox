@@ -1,4 +1,4 @@
-export { race, profession, element };
+export { race, profession, element, elCount };
 
 enum race {
     // indentifier and add to default maxHp
@@ -24,3 +24,5 @@ enum element {
     earth,
     wood,
 }
+
+const elCount = Object.keys(element).length / 2;
