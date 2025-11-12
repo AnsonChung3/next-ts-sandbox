@@ -31,12 +31,13 @@ export default class PlayerChar {
 }
 
 const elementMultiplier = (self: number, enemy: number) => {
-    if (self === enemy - 1 || (self === EN.elCount - 1 && enemy === 1)) {
+    const count = EN.enumCount(EN.element);
+    if (self === enemy - 1 || (self === count - 1 && enemy === 1)) {
         // player is weak against enemy
         return 2;
     }
 
-    if (self === enemy + 1 || (self === 1 && enemy === EN.elCount - 1)) {
+    if (self === enemy + 1 || (self === 1 && enemy === count - 1)) {
         return 0.5;
     }
 
