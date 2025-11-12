@@ -1,3 +1,9 @@
+// incomplete sandbox on pause
+// cross ref with app/extend-class-example
+// idea from an article that creates a custom method
+// input an array of class definitions and reduce it to one class definitation
+// and use the end return value (a single class definition) as a parent class
+
 export default function CustomClassExtender() {
     const stardewValley = new Game('Stardew Valley');
 

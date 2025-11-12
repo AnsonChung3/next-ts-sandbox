@@ -1,3 +1,8 @@
+// This is an incomplete sandbox for class extension on puase
+// original idea was to prepare for things like
+// class Weapon extends CharacterSheet
+// cross ref with app/custom-class-extender
+
 export default function ExtendClass() {
     const d = new Dog('Ghosty', ['white', 'grey', 'black']);
     const e = new Derived();
